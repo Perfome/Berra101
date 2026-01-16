@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathGenius AI | Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+    <div id="particles"></div>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-circle"><span class="math-symbol">∫</span></div>
+                <div>
+                    <h1>MathGenius <span style="color:var(--accent)">PRO</span></h1>
+                    <p class="tagline">Gelişmiş Analiz ve Sohbet Motoru</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-number" id="totalCalc">0</span><span class="stat-label">İşlem</span></div>
+                <div class="stat-item"><span class="stat-number">AI</span><span class="stat-label">Modu</span></div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeBtn">🌓</button>
+                <button class="icon-btn" id="clearBtn">🗑️</button>
+            </div>
+        </header>
+
+        <div class="main">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>📐 Matematik</h3>
+                    <button class="menu-btn active" data-type="integral">∫ İntegral</button>
+                    <button class="menu-btn" data-type="derivative">d/dx Türev</button>
+                    <button class="menu-btn" data-type="solve">= Denklem</button>
+                </div>
+                <div class="examples">
+                    <h3>💡 Dene</h3>
+                    <div class="example-tag" data-cmd="integral sin(x) + x^2">sin(x)+x²</div>
+                    <div class="example-tag" data-cmd="turev e^x * x">e^x * x</div>
+                    <div class="example-tag" data-cmd="Selam, nasılsın?">Sohbet Et</div>
+                </div>
+            </aside>
+
+            <main class="chat-area">
+                <div class="chat-messages" id="chatMessages">
+                    <div id="welcomeScreen" class="welcome">
+                        <div class="welcome-icon"><span class="icon-center">Σ</span></div>
+                        <h2>Sistem Çevrimiçi</h2>
+                        <p>Matematiksel analiz veya genel sohbet için hazırım.</p>
+                    </div>
+                    <div id="messages"></div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-tools">
+                        <button class="tool-btn" data-symbol="∫">∫</button>
+                        <button class="tool-btn" data-symbol="√">√</button>
+                        <button class="tool-btn" data-symbol="^">^</button>
+                        <button class="tool-btn" data-symbol="π">π</button>
+                        <div class="char-count"><span id="charCount">0</span>/300</div>
+                    </div>
+                    <div class="input-box">
+                        <textarea id="messageInput" placeholder="Bir şey sor veya problem yaz..."></textarea>
+                        <button class="send-btn" id="sendBtn">🚀</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.js"></script>
+    <script src="math-engine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
